@@ -24,11 +24,16 @@ namespace Progra2251
         public void GainExperience(int experience)
         {
             this.experience += experience;
-            if (this.experience >= level * 10)
+            while (this.experience >= level * 10)
             {
-                level++;
                 this.experience -= level * 10;
+                level++;
             }
+        }
+
+        public string GetPlayerData()
+        {
+            return $"El jugador con nombre {name} está en nivel {level} y tiene {experience} experiencia";
         }
 
 
