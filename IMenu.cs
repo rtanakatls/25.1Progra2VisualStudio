@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace Progra2251
 {
-    internal class Program
+    internal interface IMenu
     {
-        static void Main(string[] args)
-        {
-            IMenu menu=new Menu();
-            menu.Execute();
-        }
+        void Execute();
     }
 }
