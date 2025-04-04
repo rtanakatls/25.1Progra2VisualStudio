@@ -46,7 +46,10 @@
     <Compile Include="Character.cs" />
     <Compile Include="IMenu.cs" />
     <Compile Include="Menu.cs" />
+    <Compile Include="MustBeImplementedException.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="PlayerNoNameException.cs" />
+    <Compile Include="PlayerNoPositiveLevelException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -15,10 +15,14 @@ namespace Progra2251
         public int Level { get { return level; } }
 
 
-        public Player(string name) : base(name)
+        public Player(string name, int level) : base(name)
         {
+            if (level <= 0)
+            {
+                throw new PlayerNoPositiveLevelException(level);
+            }
             experience = 0;
-            level = 1;
+            this.level = level;
         }
 
         public void GainExperience(int experience)
@@ -31,7 +35,7 @@ namespace Progra2251
             }
         }
 
-        public string GetPlayerData()
+        public override string GetData()
         {
             return $"El jugador con nombre {name} está en nivel {level} y tiene {experience} experiencia";
         }

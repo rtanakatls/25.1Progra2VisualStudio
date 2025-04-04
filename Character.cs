@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Progra2251
 {
-    internal abstract class Character
+    internal abstract class Character 
     {
         protected string name;
 
@@ -14,8 +14,14 @@ namespace Progra2251
 
         public Character(string name)
         {
+            if (name.Length == 0)
+            {
+                throw new PlayerNoNameException("El jugador no puede tener nombre vacío");
+            }
             this.name = name;
         }
+
+        public abstract string GetData();
 
     }
 }

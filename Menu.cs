@@ -19,9 +19,40 @@ namespace Progra2251
         private void CreatePlayer()
         {
             string name;
-            Console.WriteLine("Introduce el nombre:");
-            name= Console.ReadLine();
-            player = new Player(name);
+            int level=0;
+            bool continueFlag1 = true;
+            while (continueFlag1)
+            {
+                Console.WriteLine("Introduce el nombre:");
+                name = Console.ReadLine();
+                bool continueFlag2 = true;
+                while (continueFlag2)
+                {
+                    Console.WriteLine("Introduce el nivel del jugador:");
+                    try
+                    {
+                        level = int.Parse(Console.ReadLine());
+                        continueFlag2 = false;
+                    }
+                    catch (FormatException e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                }
+                try
+                {
+                    player = new Player(name, level);
+                    continueFlag1 = false;
+                }
+                catch (PlayerNoNameException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                catch(PlayerNoPositiveLevelException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
 
             Console.WriteLine($"Se ha creado al jugador con nombre: {player.Name} y está en nivel {player.Level} con {player.Experience} de experiencia");
         }
@@ -42,15 +73,15 @@ namespace Progra2251
                 {
                     case "1":
                         player.GainExperience(1);
-                        Console.WriteLine(player.GetPlayerData());
+                        Console.WriteLine(player.GetData());
                         break;
                     case "2":
                         player.GainExperience(10); 
-                        Console.WriteLine(player.GetPlayerData());
+                        Console.WriteLine(player.GetData());
                         break;
                     case "3":
                         player.GainExperience(100);
-                        Console.WriteLine(player.GetPlayerData());
+                        Console.WriteLine(player.GetData());
                         break;
                     case "0":
                         continueFlag = false;
