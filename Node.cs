@@ -16,5 +16,7 @@ namespace Progra2251
         {
             this.code = code;
         }
+
+        public abstract string GetDescription();
     }
 }

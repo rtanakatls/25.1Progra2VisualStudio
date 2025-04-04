@@ -31,18 +31,7 @@ namespace Progra2251
                 if (i == currentPosition)
                 {
                     Console.Write("P");
-                    switch(nodes[i].Code) 
-                    {
-                        case "D":
-                            text = "Estás en un nodo de decisión";
-                            break;
-                        case "O":
-                            text = "Estás en un nodo de avance";
-                            break;
-                        case "X":
-                            text = "Estás en un nodo de combate";
-                            break;
-                    }
+                    text = nodes[i].GetDescription();
                 }
                 else
                 {

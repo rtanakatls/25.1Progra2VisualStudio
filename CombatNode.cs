@@ -12,5 +12,9 @@ namespace Progra2251
         {
 
         }
+        public override string GetDescription()
+        {
+            return "Este es un nodo de combate";
+        }
     }
 }
