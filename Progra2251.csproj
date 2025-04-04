@@ -43,10 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdvanceNode.cs" />
     <Compile Include="Character.cs" />
+    <Compile Include="CombatNode.cs" />
+    <Compile Include="DecisionNode.cs" />
     <Compile Include="IMenu.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="MustBeImplementedException.cs" />
+    <Compile Include="Node.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerNoNameException.cs" />
     <Compile Include="PlayerNoPositiveLevelException.cs" />

@@ -8,9 +8,78 @@ namespace Progra2251
 {
     internal class Menu : IMenu
     {
+        private List<Node> nodes;
+        private int currentPosition;
         private Player player;
 
         public void Execute()
+        {
+            CreateNodes();
+            while(currentPosition< nodes.Count)
+            {
+                ShowNodes();
+                Console.ReadKey();
+                currentPosition++;
+            }
+        }
+
+        private void ShowNodes()
+        {
+            string text = "";
+            for (int i = 0; i < nodes.Count; i++)
+            {
+                if (i == currentPosition)
+                {
+                    Console.Write("P");
+                    switch(nodes[i].Code) 
+                    {
+                        case "D":
+                            text = "Estás en un nodo de decisión";
+                            break;
+                        case "O":
+                            text = "Estás en un nodo de avance";
+                            break;
+                        case "X":
+                            text = "Estás en un nodo de combate";
+                            break;
+                    }
+                }
+                else
+                {
+                    Console.Write(nodes[i].Code);
+                }
+            }
+            Console.WriteLine();
+            Console.WriteLine(text);
+        }
+
+        private void CreateNodes()
+        {
+            nodes= new List<Node>();
+            currentPosition = 0;
+            nodes.Add(new AdvanceNode());
+            nodes.Add(new AdvanceNode());
+            nodes.Add(new AdvanceNode());
+            nodes.Add(new DecisionNode());
+            nodes.Add(new CombatNode());
+            nodes.Add(new AdvanceNode());
+            nodes.Add(new DecisionNode());
+            nodes.Add(new AdvanceNode());
+            nodes.Add(new AdvanceNode());
+            nodes.Add(new CombatNode());
+            nodes.Add(new AdvanceNode());
+            nodes.Add(new AdvanceNode());
+            nodes.Add(new AdvanceNode());
+            nodes.Add(new DecisionNode());
+            nodes.Add(new CombatNode());
+            nodes.Add(new AdvanceNode());
+            nodes.Add(new DecisionNode());
+            nodes.Add(new AdvanceNode());
+            nodes.Add(new AdvanceNode());
+            nodes.Add(new CombatNode());
+        }
+
+        private void Execute2()
         {
             CreatePlayer();
             GainExperienceMenu();
