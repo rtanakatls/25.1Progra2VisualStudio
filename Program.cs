@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Progra2251.Week3;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace Progra2251
     {
         static void Main(string[] args)
         {
-            IMenu menu=new Menu();
+            IMenu menu=new Week3Menu();
             menu.Execute();
         }
     }
